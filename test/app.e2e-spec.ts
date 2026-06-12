@@ -26,6 +26,18 @@ describe("PluginsController (e2e)", () => {
             });
     });
 
+    it("/api/plugins/example-plugin/1.0.0/download (GET)", () => {
+        return request(app.getHttpServer())
+            .get("/api/plugins/example-plugin/1.0.0/download")
+            .expect("Content-Type", /javascript/)
+            .expect(200)
+            .expect((res) => {
+                expect(res.text).toContain("export default");
+                expect(res.text).toContain("[ExamplePlugin] started");
+                expect(res.text).toContain("[ExamplePlugin] stopped");
+            });
+    });
+
     afterEach(async () => {
         await app.close();
     });
