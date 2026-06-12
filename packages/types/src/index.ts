@@ -9,12 +9,12 @@ export type RemotePluginManifestDto = {
     downloadUrl: string;
     hash: string;
     tags: string[];
-    pluginApiVersion?: string;
+    pluginApiVersion: string;
+    loadType: RemotePluginLoadType;
     minClientVersion?: string;
     maxClientVersion?: string;
     discordBuild?: string;
     changelog?: string;
-    loadType?: RemotePluginLoadType;
 };
 
 export type PluginRegistryResponseDto = {
