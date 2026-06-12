@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "composite": true,
+        "declaration": true,
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": false,
+        "outDir": "dist",
+        "rootDir": "src"
+    },
+    "include": ["src/**/*"]
+}
