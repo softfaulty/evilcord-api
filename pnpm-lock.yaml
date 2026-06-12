@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@evilcord/common':
+        specifier: workspace:*
+        version: link:packages/common
       '@evilcord/types':
         specifier: workspace:*
         version: link:packages/types
@@ -96,6 +99,15 @@ importers:
       typescript-eslint:
         specifier: ^8.20.0
         version: 8.61.0(eslint@9.39.4)(typescript@5.9.3)
+
+  packages/common:
+    devDependencies:
+      '@types/node':
+        specifier: ^24.0.0
+        version: 24.13.2
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
 
   packages/types:
     devDependencies:

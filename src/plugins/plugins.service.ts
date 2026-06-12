@@ -1,4 +1,5 @@
 import { Injectable } from "@nestjs/common";
+import { hashPluginBytes } from "@evilcord/common";
 import type {
     PluginRegistryResponseDto,
     RemotePluginManifestDto
@@ -23,7 +24,7 @@ const EXAMPLE_PLUGIN_MANIFEST: RemotePluginManifestDto = {
     version: "1.0.0",
     downloadUrl:
         "http://localhost:3000/api/plugins/example-plugin/1.0.0/download",
-    hash: "sha256-placeholder",
+    hash: hashPluginBytes(Buffer.from(EXAMPLE_PLUGIN_SOURCE)),
     tags: ["test"],
     pluginApiVersion: "1",
     loadType: "lazy"

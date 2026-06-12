@@ -31,7 +31,7 @@ describe("PluginsController (e2e)", () => {
                         version: "1.0.0",
                         downloadUrl:
                             "http://localhost:3000/api/plugins/example-plugin/1.0.0/download",
-                        hash: "sha256-placeholder",
+                        hash: "sha256-e5b0f66442ead2ba2fda5fcd2abb9c850b4e3163473a64f0f88482f1b9d61784",
                         tags: ["test"],
                         pluginApiVersion: "1",
                         loadType: "lazy"
