@@ -1,5 +1,8 @@
 import { Injectable } from "@nestjs/common";
-import type { PluginRegistryResponseDto } from "@evilcord/types";
+import type {
+    PluginRegistryResponseDto,
+    RemotePluginManifestDto
+} from "@evilcord/types";
 
 const EXAMPLE_PLUGIN_SOURCE = `export default {
     start() {
@@ -12,11 +15,25 @@ const EXAMPLE_PLUGIN_SOURCE = `export default {
 };
 `;
 
+const EXAMPLE_PLUGIN_MANIFEST: RemotePluginManifestDto = {
+    id: "example-plugin",
+    name: "Example Plugin",
+    description: "Tiny test plugin.",
+    author: "softfault",
+    version: "1.0.0",
+    downloadUrl:
+        "http://localhost:3000/api/plugins/example-plugin/1.0.0/download",
+    hash: "sha256-placeholder",
+    tags: ["test"],
+    pluginApiVersion: "1",
+    loadType: "lazy"
+};
+
 @Injectable()
 export class PluginsService {
     getPluginRegistry(): PluginRegistryResponseDto {
         return {
-            plugins: []
+            plugins: [EXAMPLE_PLUGIN_MANIFEST]
         };
     }
 

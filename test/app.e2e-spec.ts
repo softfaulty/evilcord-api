@@ -22,7 +22,21 @@ describe("PluginsController (e2e)", () => {
             .get("/api/plugins")
             .expect(200)
             .expect({
-                plugins: []
+                plugins: [
+                    {
+                        id: "example-plugin",
+                        name: "Example Plugin",
+                        description: "Tiny test plugin.",
+                        author: "softfault",
+                        version: "1.0.0",
+                        downloadUrl:
+                            "http://localhost:3000/api/plugins/example-plugin/1.0.0/download",
+                        hash: "sha256-placeholder",
+                        tags: ["test"],
+                        pluginApiVersion: "1",
+                        loadType: "lazy"
+                    }
+                ]
             });
     });
 
